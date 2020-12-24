@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy image') {
             steps {
-                sh 'docker run -d reshmababu/tomcatimage:$BUILD_NUMBER'
+                sh 'docker run -d registry:$BUILD_NUMBER'
             }
         }
         stage('Push Image') {
