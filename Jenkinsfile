@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = "reshmababu/tomcatimage"
-        registryCredentials = 'docker_hub_id'
+        registryCredentials = 'docker_hub_id'        
     }
     agent any 
     stages {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy image') {
             steps {
-                sh 'docker run -d $dockerImage'
+                sh 'docker run -d registry+ ":$BUILD_NUMBER" 
             }
         }
         stage('Push Image') {
